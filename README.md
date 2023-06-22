@@ -1,1 +1,1 @@
-# new_app
+# sns_app
