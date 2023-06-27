@@ -8,10 +8,10 @@
     android:background="#b8d2" >
 
     <TextView
-        android:id="@+id/browse_txt1"
+        android:id="@+id/user_txt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="閲覧画面"
+        android:text="ユーザー画面"
         android:textColor="#2b2b2b"
         android:textSize="40dp"
         android:layout_marginTop="200dp"

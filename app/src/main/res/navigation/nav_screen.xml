@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_screen"
+    app:startDestination="@id/StartFragment" >
+
+    <fragment
+        android:id="@+id/StartFragment"
+        android:name="com.example.sns_app.view.StartView"
+        tools:layout="@layout/fragment_start" >
+
+        <action
+            android:id="@+id/action_StartFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+        <action
+            android:id="@+id/action_StartFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
+
+        <action
+            android:id="@+id/action_StartFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.example.sns_app.view.MainView"
+        android:label="mainFragment"
+        tools:layout="@layout/fragment_main" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/RegisterFragment"
+        android:name="com.example.sns_app.view.RegisterView"
+        android:label="registerFragment"
+        tools:layout="@layout/fragment_register" >
+
+        <action
+            android:id="@+id/action_RegisterFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.sns_app.view.LoginView"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/action_LoginFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+    </fragment>
+
+</navigation>

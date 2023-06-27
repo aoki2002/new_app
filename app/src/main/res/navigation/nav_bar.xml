@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_bar"
+    app:startDestination="@id/BrowseFragment" >
+
+    <fragment
+        android:id="@+id/BrowseFragment"
+        android:name="com.example.sns_app.view.BrowseView"
+        tools:layout="@layout/fragment_browse" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/PostFragment"
+        android:name="com.example.sns_app.view.PostView"
+        tools:layout="@layout/fragment_post" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/UserFragment"
+        android:name="com.example.sns_app.view.UserView"
+        tools:layout="@layout/fragment_user" >
+
+    </fragment>
+
+</navigation>
