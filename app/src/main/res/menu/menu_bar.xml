@@ -3,17 +3,17 @@
 
     <item
         android:id="@+id/BrowseFragment"
-        android:icon="@drawable/browse_icon"
+        android:icon="@drawable/icon_browse"
         android:title="" />
 
     <item
         android:id="@+id/PostFragment"
-        android:icon="@drawable/post_icon"
+        android:icon="@drawable/icon_post"
         android:title="" />
 
     <item
         android:id="@+id/UserFragment"
-        android:icon="@drawable/user_icon"
+        android:icon="@drawable/icon_user"
         android:title=""/>
 
 </menu>

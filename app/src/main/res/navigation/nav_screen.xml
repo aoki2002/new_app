@@ -16,10 +16,6 @@
             app:destination="@id/MainFragment" />
 
         <action
-            android:id="@+id/action_StartFragment_to_RegisterFragment"
-            app:destination="@id/RegisterFragment" />
-
-        <action
             android:id="@+id/action_StartFragment_to_LoginFragment"
             app:destination="@id/LoginFragment" />
 
@@ -34,25 +30,29 @@
     </fragment>
 
     <fragment
-        android:id="@+id/RegisterFragment"
-        android:name="com.example.sns_app.view.RegisterView"
-        android:label="registerFragment"
-        tools:layout="@layout/fragment_register" >
+        android:id="@+id/LoginFragment"
+        android:name="com.example.sns_app.view.SignInView"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_signin" >
 
         <action
-            android:id="@+id/action_RegisterFragment_to_MainFragment"
+            android:id="@+id/action_LoginFragment_to_MainFragment"
             app:destination="@id/MainFragment" />
+
+        <action
+            android:id="@+id/action_LoginFragment_to_RegisterFragment"
+            app:destination="@id/RegisterFragment" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/LoginFragment"
-        android:name="com.example.sns_app.view.LoginView"
-        android:label="LoginFragment"
-        tools:layout="@layout/fragment_login" >
+        android:id="@+id/RegisterFragment"
+        android:name="com.example.sns_app.view.SignupView"
+        android:label="registerFragment"
+        tools:layout="@layout/fragment_signup" >
 
         <action
-            android:id="@+id/action_LoginFragment_to_MainFragment"
+            android:id="@+id/action_RegisterFragment_to_MainFragment"
             app:destination="@id/MainFragment" />
 
     </fragment>

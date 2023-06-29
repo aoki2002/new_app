@@ -2,5 +2,6 @@ package com.example.sns_app.view
 
 import androidx.fragment.app.Fragment
 
-class RegisterView: Fragment() {
+class SignUpView: Fragment() {
+
 }
