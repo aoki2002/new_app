@@ -1,37 +1,47 @@
 package com.example.sns_app.model
 
+import android.database.Observable
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import android.os.Bundle
+import android.widget.Toast
 
 class AuthenticationManager: AuthenticationRepository {
 
-    private lateinit var auth: FirebaseAuth
+    private var auth = Firebase.auth
 
-    override fun start() {
-
-        auth = Firebase.auth
-
-    }
-
-    override fun checkAccount() {
+    override fun checkAccount(): Boolean {
 
         val currentUser = auth.currentUser
 
-        if (currentUser != null) {
+        val checkIsEnable: Boolean = (currentUser != null)
 
-        } else {
-
-        }
+        return checkIsEnable
     }
 
-    override fun loginAccount() {
+    override fun loginAccount(email: String, password: String) {
 
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+
+            }
+            .addOnFailureListener {
+
+            }
     }
 
-    override fun createAccount() {
+    override fun createAccount(email: String, password: String) {
 
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnSuccessListener {
+
+                val user = auth.currentUser
+
+            }
+            .addOnFailureListener {
+
+            }
     }
 
 }

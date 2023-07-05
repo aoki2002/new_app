@@ -13,16 +13,22 @@ import com.example.sns_app.viewmodel.SignUpViewModel
 
 class SignUpView: Fragment() {
 
+    private lateinit var binding: FragmentSignupBinding
+
     private val signupViewModel: SignUpViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val binding = DataBindingUtil.inflate<FragmentSignupBinding>(inflater, R.layout.fragment_signup, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signup, container, false)
 
         binding.viewModel = signupViewModel
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
     }
 

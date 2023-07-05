@@ -1,12 +1,12 @@
 package com.example.sns_app.model
 
+import android.database.Observable
+
 interface AuthenticationRepository {
 
-    fun start()
+    fun checkAccount(): Boolean
 
-    fun checkAccount()
+    fun loginAccount(email: String, password: String)
 
-    fun loginAccount()
-
-    fun createAccount()
+    fun createAccount(email: String, password: String)
 }

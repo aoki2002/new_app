@@ -15,7 +15,7 @@
         android:background="#b8d2" >
 
         <TextView
-            android:id="@+id/register_txt1"
+            android:id="@+id/signup_txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
@@ -27,14 +27,14 @@
             android:textSize="30sp" />
 
         <EditText
-            android:id="@+id/register_edit1"
+            android:id="@+id/signup_edit1"
             android:layout_width="275dp"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_txt1"
-            android:text="@={viewModel.signup_userName}"
+            app:layout_constraintTop_toBottomOf="@+id/signup_txt1"
+            android:text="@={viewModel.signup_name}"
             android:maxLength="10"
             android:inputType="text"
             android:textSize="20sp"
@@ -42,13 +42,13 @@
             android:background="@drawable/edit_style" />
 
         <EditText
-            android:id="@+id/register_edit2"
+            android:id="@+id/signup_edit2"
             android:layout_width="275dp"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_edit1"
+            app:layout_constraintTop_toBottomOf="@+id/signup_edit1"
             android:text="@={viewModel.signup_email}"
             android:maxLength="10"
             android:inputType="text"
@@ -57,13 +57,13 @@
             android:background="@drawable/edit_style" />
 
         <EditText
-            android:id="@+id/register_edit3"
+            android:id="@+id/signup_edit3"
             android:layout_width="275dp"
             android:layout_height="50dp"
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_edit2"
+            app:layout_constraintTop_toBottomOf="@+id/signup_edit2"
             android:text="@={viewModel.signup_password}"
             android:maxLength="10"
             android:inputType="text"
@@ -72,12 +72,12 @@
             android:background="@drawable/edit_style" />
 
         <Button
-            android:id="@+id/register_btn1"
+            android:id="@+id/signup_btn1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_edit3"
+            app:layout_constraintTop_toBottomOf="@+id/signup_edit3"
             android:text="登録"
             android:textSize="20sp"
             android:textColor="#2b2b2b"
@@ -85,6 +85,17 @@
             android:gravity="center"
             android:layout_marginTop="50dp"
             android:onClick="@{() -> vm.buttonTapped()}"/>
+
+        <TextView
+            android:id="@+id/signup_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/signup_btn1"
+            android:textColor="#d3381c"
+            android:textSize="30sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
