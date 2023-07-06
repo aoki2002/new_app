@@ -10,38 +10,43 @@ import android.widget.Toast
 class AuthenticationManager: AuthenticationRepository {
 
     private var auth = Firebase.auth
+    private val currentUser = auth.currentUser
+    private var loginResult: Boolean? = null
+    private var createResult: Boolean? = null
 
     override fun checkAccount(): Boolean {
 
-        val currentUser = auth.currentUser
-
-        val checkIsEnable: Boolean = (currentUser != null)
-
-        return checkIsEnable
+        return (currentUser != null)
     }
 
-    override fun loginAccount(email: String, password: String) {
+    override fun loginAccount(email: String, password: String): Boolean? {
 
         auth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
 
+                loginResult = true
             }
             .addOnFailureListener {
 
+                loginResult = false
             }
+
+        return loginResult
     }
 
-    override fun createAccount(email: String, password: String) {
+    override fun createAccount(email: String, password: String): Boolean? {
 
         auth.createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
 
-                val user = auth.currentUser
-
+                createResult = true
             }
             .addOnFailureListener {
 
+                createResult = false
             }
+
+        return createResult
     }
 
 }

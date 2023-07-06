@@ -1,6 +1,5 @@
 package com.example.sns_app.viewmodel
 
-import android.media.metrics.Event
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,7 +7,7 @@ import com.example.sns_app.model.AuthenticationRepository
 
 class SignUpViewModel(private val authenticationRepository: AuthenticationRepository): ViewModel() {
 
-    private val onTransit = MutableLiveData<Event>()
+    var createIsEnable: Boolean? = null
 
     private val _signup_name = MutableLiveData<String>().also {
         it.value = ""
@@ -22,17 +21,17 @@ class SignUpViewModel(private val authenticationRepository: AuthenticationReposi
     }
 
     val signup_email: LiveData<String>
-        get() = _signup_name
+        get() = _signup_email
 
     private val _signup_password = MutableLiveData<String>().also {
         it.value = ""
     }
 
     val signup_password: LiveData<String>
-        get() = _signup_name
+        get() = _signup_password
 
-    fun buttonTapped() {
+    fun createButtonTapped() {
 
-        authenticationRepository.loginAccount(signup_email.toString(), signup_password.toString())
+        createIsEnable = authenticationRepository.loginAccount(_signup_email.toString(), _signup_password.toString())
     }
 }

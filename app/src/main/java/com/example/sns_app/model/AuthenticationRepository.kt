@@ -6,7 +6,7 @@ interface AuthenticationRepository {
 
     fun checkAccount(): Boolean
 
-    fun loginAccount(email: String, password: String)
+    fun loginAccount(email: String, password: String): Boolean?
 
-    fun createAccount(email: String, password: String)
+    fun createAccount(email: String, password: String): Boolean?
 }

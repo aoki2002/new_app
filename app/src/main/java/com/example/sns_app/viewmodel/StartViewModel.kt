@@ -7,15 +7,10 @@ import android.app.usage.UsageEvents.Event
 
 class StartViewModel(private val authenticationRepository: AuthenticationRepository): ViewModel() {
 
-    private val toMainView = MutableLiveData<Event>()
-
-    private val toSignInView = MutableLiveData<Event>()
+    var checkIsEnable: Boolean? = null
 
     fun check() {
-        val checkIsEnable = authenticationRepository.checkAccount()
 
-        if (checkIsEnable) {
-            toMainView.value = Event()
-        }
+        checkIsEnable = authenticationRepository.checkAccount()
     }
 }

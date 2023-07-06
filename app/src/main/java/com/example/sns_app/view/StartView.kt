@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.sns_app.R
 import com.example.sns_app.databinding.FragmentStartBinding
 import com.example.sns_app.viewmodel.StartViewModel
@@ -32,11 +34,20 @@ class StartView: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Handler().postDelayed ({
+        val navController = view.findNavController()
 
-            val navController = view.findNavController()
+        startViewModel.check()
 
-            navController.navigate(R.id.action_StartFragment_to_MainFragment)
-        }, 3000)
+        Handler()
+            .postDelayed (
+                {
+                    if ( startViewModel.checkIsEnable == true) {
+
+                        navController.navigate(R.id.action_StartFragment_to_MainFragment)
+                    } else {
+
+                        navController.navigate(R.id.action_StartFragment_to_LoginFragment)
+                    }
+                }, 3000)
     }
 }

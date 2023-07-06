@@ -84,7 +84,7 @@
             android:background="@drawable/style_login_button"
             android:gravity="center"
             android:layout_marginTop="50dp"
-            android:onClick="@{() -> vm.buttonTapped()}"/>
+            android:onClick="@{() -> viewModel.createButtonTapped()}"/>
 
         <TextView
             android:id="@+id/signup_txt2"

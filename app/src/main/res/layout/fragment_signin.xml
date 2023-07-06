@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="vm"
+            name="viewModel"
             type="com.example.sns_app.viewmodel.SignInViewModel" />
     </data>
 
@@ -86,7 +86,8 @@
             android:text="新規登録"
             android:textSize="20sp"
             android:textColor="#2ca9e1"
-            android:background="@drawable/style_register_button" />
+            android:background="@drawable/style_register_button"
+            android:onClick="@{() -> viewModel.loginButtonTapped()}" />
 
         <TextView
             android:id="@+id/login_txt2"
