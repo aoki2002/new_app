@@ -16,8 +16,8 @@
             app:destination="@id/MainFragment" />
 
         <action
-            android:id="@+id/action_StartFragment_to_LoginFragment"
-            app:destination="@id/LoginFragment" />
+            android:id="@+id/action_StartFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
 
     </fragment>
 
@@ -30,29 +30,29 @@
     </fragment>
 
     <fragment
-        android:id="@+id/LoginFragment"
+        android:id="@+id/SignInFragment"
         android:name="com.example.sns_app.view.SignInView"
-        android:label="LoginFragment"
+        android:label="signinFragment"
         tools:layout="@layout/fragment_signin" >
 
         <action
-            android:id="@+id/action_LoginFragment_to_MainFragment"
+            android:id="@+id/action_SignInFragment_to_MainFragment"
             app:destination="@id/MainFragment" />
 
         <action
-            android:id="@+id/action_LoginFragment_to_RegisterFragment"
-            app:destination="@id/RegisterFragment" />
+            android:id="@+id/action_SignInFragment_to_SignUpFragment"
+            app:destination="@id/SignUpFragment" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/RegisterFragment"
-        android:name="com.example.sns_app.view.SignupView"
-        android:label="registerFragment"
+        android:id="@+id/SignUpFragment"
+        android:name="com.example.sns_app.view.SignUpView"
+        android:label="signupFragment"
         tools:layout="@layout/fragment_signup" >
 
         <action
-            android:id="@+id/action_RegisterFragment_to_MainFragment"
+            android:id="@+id/action_SignUpFragment_to_MainFragment"
             app:destination="@id/MainFragment" />
 
     </fragment>

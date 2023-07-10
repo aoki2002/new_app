@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.example.sns_app.R
 import com.example.sns_app.databinding.FragmentSignupBinding
 import com.example.sns_app.viewmodel.SignUpViewModel
@@ -15,7 +16,7 @@ class SignUpView: Fragment() {
 
     private lateinit var binding: FragmentSignupBinding
 
-    private val signupViewModel: SignUpViewModel by viewModels()
+    val signupViewModel: SignUpViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -29,6 +30,16 @@ class SignUpView: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val navController = view.findNavController()
+
+        if ( signupViewModel.createIsEnable == true) {
+
+            navController.navigate(R.id.action_StartFragment_to_MainFragment)
+        } else {
+
+        }
+
 
     }
 

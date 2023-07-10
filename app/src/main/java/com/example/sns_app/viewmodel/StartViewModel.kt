@@ -1,15 +1,18 @@
 package com.example.sns_app.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import android.util.Log
 import com.example.sns_app.model.AuthenticationRepository
-import android.app.usage.UsageEvents.Event
 
-class StartViewModel(private val authenticationRepository: AuthenticationRepository): ViewModel() {
+class StartViewModel: ViewModel() {
+
+    private val authenticationRepository = AuthenticationRepository()
 
     var checkIsEnable: Boolean? = null
 
     fun check() {
+
+        Log.d("StartViewModel", "check関数呼び出し")
 
         checkIsEnable = authenticationRepository.checkAccount()
     }
