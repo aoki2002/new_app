@@ -40,6 +40,8 @@ class StartView: Fragment() {
 
         val navController = view.findNavController()
 
+        Log.d("StartView", "スタート画面")
+
         startViewModel.check()
 
         Handler()

@@ -1,6 +1,7 @@
 package com.example.sns_app.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +45,8 @@ class SignInView: Fragment() {
         }
 
         binding.loginBtn2.setOnClickListener {
+
+            Log.d("SignInView", "新規登録ボタン")
             navController.navigate(R.id.action_SignInFragment_to_SignUpFragment)
         }
 
