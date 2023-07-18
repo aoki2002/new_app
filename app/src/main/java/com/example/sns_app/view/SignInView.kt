@@ -46,7 +46,7 @@ class SignInView: Fragment() {
 
         binding.loginBtn2.setOnClickListener {
 
-            Log.d("SignInView", "新規登録ボタン")
+            Log.d("SignInView", "新規登録ボタンクリック")
             navController.navigate(R.id.action_SignInFragment_to_SignUpFragment)
         }
 

@@ -18,7 +18,7 @@
             android:id="@+id/weather_txt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Goodあんどnew"
+            android:text="GoodあんどNew"
             android:textColor="#2b2b2b"
             android:textSize="40dp"
             android:layout_marginTop="200dp"

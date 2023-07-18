@@ -1,5 +1,6 @@
 package com.example.sns_app.model
 
+import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -36,6 +37,8 @@ class AuthenticationRepository {
     }
 
     fun createAccount(email: String, password: String): Boolean? {
+
+        Log.d("AuthenticationRepository", email)
 
         auth = Firebase.auth
 

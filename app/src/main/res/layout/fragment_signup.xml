@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<layout xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
 
@@ -35,7 +35,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signup_txt1"
             android:text="@={viewModel.signup_name}"
-            android:maxLength="10"
             android:inputType="text"
             android:textSize="20sp"
             android:hint="ユーザー名"
@@ -50,8 +49,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signup_edit1"
             android:text="@={viewModel.signup_email}"
-            android:maxLength="10"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textSize="20sp"
             android:hint="メールアドレス"
             android:background="@drawable/edit_style" />
@@ -65,8 +63,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/signup_edit2"
             android:text="@={viewModel.signup_password}"
-            android:maxLength="10"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textSize="20sp"
             android:hint="パスワード"
             android:background="@drawable/edit_style" />

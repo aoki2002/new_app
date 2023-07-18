@@ -1,5 +1,6 @@
 package com.example.sns_app.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.sns_app.model.AuthenticationRepository
@@ -18,6 +19,8 @@ class SignUpViewModel: ViewModel() {
 
     fun createButtonTapped() {
 
-        createIsEnable = authenticationRepository.loginAccount(signup_email.toString(), signup_password.toString())
+        Log.d("SignUpViewModel", signup_email.toString())
+
+        createIsEnable = authenticationRepository.createAccount(signup_email.toString(), signup_password.toString())
     }
 }

@@ -1,6 +1,7 @@
 package com.example.sns_app.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,8 @@ class SignUpView: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("SignUpView", "新規登録画面表示")
+
         val navController = view.findNavController()
 
         if ( signupViewModel.createIsEnable == true) {
@@ -38,6 +41,7 @@ class SignUpView: Fragment() {
             navController.navigate(R.id.action_StartFragment_to_MainFragment)
         } else {
 
+            Log.d("SignUpView", "新規登録失敗")
         }
 
 

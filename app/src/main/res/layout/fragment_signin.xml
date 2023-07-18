@@ -38,8 +38,7 @@
             app:layout_constraintTop_toBottomOf="@+id/login_txt1"
             android:background="@drawable/edit_style"
             android:text="@={viewModel.signin_email}"
-            android:maxLength="10"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textSize="20sp"
             android:hint="メールアドレス" />
 
@@ -55,8 +54,7 @@
             app:layout_constraintTop_toBottomOf="@+id/login_edit1"
             android:background="@drawable/edit_style"
             android:text="@={viewModel.signup_password}"
-            android:maxLength="10"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:textSize="20sp"
             android:hint="パスワード" />
 
@@ -73,7 +71,8 @@
             android:text="ログイン"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:background="@drawable/style_login_button" />
+            android:background="@drawable/style_login_button"
+            android:onClick="@{() -> viewModel.loginButtonTapped()}" />
 
         <Button
             android:id="@+id/login_btn2"
@@ -88,8 +87,7 @@
             android:text="新規登録"
             android:textSize="20sp"
             android:textColor="#2ca9e1"
-            android:background="@drawable/style_register_button"
-            android:onClick="@{() -> viewModel.loginButtonTapped()}" />
+            android:background="@drawable/style_register_button" />
 
         <TextView
             android:id="@+id/login_txt2"
