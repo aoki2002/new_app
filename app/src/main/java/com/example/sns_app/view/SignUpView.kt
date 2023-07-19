@@ -34,6 +34,10 @@ class SignUpView: Fragment() {
 
         Log.d("SignUpView", "新規登録画面表示")
 
+        binding.signupBtn1.setOnClickListener {
+            Log.d("SignUpView", signupViewModel.signup_email.toString())
+        }
+
         val navController = view.findNavController()
 
         if ( signupViewModel.createIsEnable == true) {
@@ -43,8 +47,5 @@ class SignUpView: Fragment() {
 
             Log.d("SignUpView", "新規登録失敗")
         }
-
-
     }
-
 }
