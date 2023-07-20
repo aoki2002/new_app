@@ -9,7 +9,7 @@ class SignUpViewModel: ViewModel() {
 
     private val authenticationRepository = AuthenticationRepository()
 
-    var createIsEnable: Boolean? = null
+    var createIsEnable = MutableLiveData<Boolean>()
 
     val signup_name = MutableLiveData<String>()
 
@@ -19,8 +19,14 @@ class SignUpViewModel: ViewModel() {
 
     fun createButtonTapped() {
 
-        Log.d("SignUpViewModel", signup_email.toString())
+        Log.d("SignUpViewModel", signup_email.value?: "")
 
-        createIsEnable = authenticationRepository.createAccount(signup_email.toString(), signup_password.toString())
+        if( authenticationRepository.createAccount(signup_email.value?: "", signup_password.value?: "") == true) {
+
+            createIsEnable.value = true
+        } else {
+            createIsEnable.value = false
+        }
+
     }
 }

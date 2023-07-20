@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.sns_app.R
 import com.example.sns_app.databinding.FragmentSignupBinding
@@ -34,18 +35,18 @@ class SignUpView: Fragment() {
 
         Log.d("SignUpView", "新規登録画面表示")
 
-        binding.signupBtn1.setOnClickListener {
-            Log.d("SignUpView", signupViewModel.signup_email.toString())
-        }
-
         val navController = view.findNavController()
 
-        if ( signupViewModel.createIsEnable == true) {
+        val signupObserver = Observer<Boolean> { signup ->
+            if (signup) {
 
-            navController.navigate(R.id.action_StartFragment_to_MainFragment)
-        } else {
+                navController.navigate(R.id.action_SignUpFragment_to_MainFragment)
+            } else {
 
-            Log.d("SignUpView", "新規登録失敗")
+                Log.d("SignUpView", "新規登録失敗")
+            }
         }
+
+        signupViewModel.createIsEnable.observe(this, signupObserver)
     }
 }

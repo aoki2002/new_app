@@ -1,6 +1,7 @@
 package com.example.sns_app.model
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
