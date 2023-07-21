@@ -21,10 +21,11 @@ class SignUpViewModel: ViewModel() {
 
         Log.d("SignUpViewModel", signup_email.value?: "")
 
-        if( authenticationRepository.createAccount(signup_email.value?: "", signup_password.value?: "") == true) {
+        if( authenticationRepository.createAccount(signup_name.value?: "", signup_email.value?: "", signup_password.value?: "") == true) {
 
             createIsEnable.value = true
         } else {
+
             createIsEnable.value = false
         }
 

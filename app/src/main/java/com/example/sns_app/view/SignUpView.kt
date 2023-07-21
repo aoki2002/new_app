@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -13,6 +14,7 @@ import androidx.navigation.findNavController
 import com.example.sns_app.R
 import com.example.sns_app.databinding.FragmentSignupBinding
 import com.example.sns_app.viewmodel.SignUpViewModel
+import com.google.common.base.MoreObjects.ToStringHelper
 
 class SignUpView: Fragment() {
 
@@ -33,8 +35,6 @@ class SignUpView: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Log.d("SignUpView", "新規登録画面表示")
-
         val navController = view.findNavController()
 
         val signupObserver = Observer<Boolean> { signup ->
@@ -44,6 +44,8 @@ class SignUpView: Fragment() {
             } else {
 
                 Log.d("SignUpView", "新規登録失敗")
+
+                Toast.makeText(activity, "新規登録失敗", Toast.LENGTH_LONG).show()
             }
         }
 

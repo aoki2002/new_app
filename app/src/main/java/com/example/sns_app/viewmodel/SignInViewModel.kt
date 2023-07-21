@@ -8,14 +8,20 @@ class SignInViewModel: ViewModel() {
 
     private val authenticationRepository = AuthenticationRepository()
 
-    var loginIsEnable: Boolean? = null
+    var loginIsEnable = MutableLiveData<Boolean>()
 
     val signin_email = MutableLiveData<String>()
 
-    val signup_password = MutableLiveData<String>()
+    val signin_password = MutableLiveData<String>()
 
     fun loginButtonTapped() {
 
-        loginIsEnable = authenticationRepository.loginAccount(signin_email.toString(), signup_password.toString())
+        if( authenticationRepository.loginAccount(signin_email.value?: "", signin_password.value?: "") == true) {
+
+            loginIsEnable.value = true
+        } else {
+
+            loginIsEnable.value = false
+        }
     }
 }

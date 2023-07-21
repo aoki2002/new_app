@@ -27,6 +27,10 @@
         android:label="mainFragment"
         tools:layout="@layout/fragment_main" >
 
+        <action
+            android:id="@+id/action_MainFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
+
     </fragment>
 
     <fragment
