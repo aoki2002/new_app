@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.sns_app.viewmodel.SignInViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b8d2" >
+
+        <TextView
+            android:id="@+id/login_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="ログイン"
+            android:textColor="#2b2b2b"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/login_edit1"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_txt1"
+            android:background="@drawable/edit_style"
+            android:text="@={viewModel.signin_email}"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:hint="メールアドレス" />
+
+        <EditText
+            android:id="@+id/login_edit2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_edit1"
+            android:background="@drawable/edit_style"
+            android:text="@={viewModel.signin_password}"
+            android:inputType="textPassword"
+            android:textSize="20sp"
+            android:hint="パスワード" />
+
+        <Button
+            android:id="@+id/login_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_edit2"
+            android:text="ログイン"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/style_login_button"
+            android:onClick="@{() -> viewModel.loginButtonTapped()}" />
+
+        <Button
+            android:id="@+id/login_btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn1"
+            android:text="新規登録"
+            android:textSize="20sp"
+            android:textColor="#2ca9e1"
+            android:background="@drawable/style_register_button" />
+
+        <TextView
+            android:id="@+id/login_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_btn2"
+            android:text="アカウントをお持ちの方"
+            android:textColor="#2b2b2b"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/login_btn3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_txt2"
+            android:text="Googleでログイン"
+            android:textSize="20sp"
+            android:textColor="#2b2b2b" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

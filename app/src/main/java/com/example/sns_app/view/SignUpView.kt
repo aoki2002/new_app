@@ -2,6 +2,7 @@ package com.example.sns_app.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,25 +12,24 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.example.sns_app.GeneralActivity
 import com.example.sns_app.MainActivity
 import com.example.sns_app.R
-import com.example.sns_app.databinding.FragmentUserBinding
-import com.example.sns_app.viewmodel.UserViewModel
+import com.example.sns_app.databinding.FragmentSignupBinding
+import com.example.sns_app.viewmodel.SignUpViewModel
+import com.google.common.base.MoreObjects.ToStringHelper
 
-class UserView: Fragment() {
+class SignUpView: Fragment() {
 
-    private lateinit var binding: FragmentUserBinding
+    private lateinit var binding: FragmentSignupBinding
 
-    val userViewModel: UserViewModel by viewModels()
+    val signupViewModel: SignUpViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_user, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signup, container, false)
 
-        binding.viewModel = userViewModel
+        binding.viewModel = signupViewModel
 
         return binding.root
     }
@@ -39,18 +39,20 @@ class UserView: Fragment() {
 
         val navController = view.findNavController()
 
-        val logoutObserver = Observer<Boolean> { logout ->
-            if (logout) {
+        val createObserver = Observer<Boolean> { create ->
+            if (create) {
 
-                val intent = Intent(activity, GeneralActivity::class.java)
+                val intent = Intent(activity, MainActivity::class.java)
 
                 startActivity(intent)
             } else {
 
-                Toast.makeText(activity, "ログアウト失敗", Toast.LENGTH_LONG).show()
+                Log.d("SignUpView", "新規登録失敗")
+
+                Toast.makeText(activity, "新規登録失敗", Toast.LENGTH_LONG).show()
             }
         }
 
-        userViewModel.logoutIsEnable.observe(this, logoutObserver)
+        signupViewModel.createIsEnable.observe(this, createObserver)
     }
 }

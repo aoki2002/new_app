@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_screen"
+    app:startDestination="@id/StartFragment" >
+
+    <fragment
+        android:id="@+id/StartFragment"
+        android:name="com.example.sns_app.view.StartView"
+        tools:layout="@layout/fragment_start" >
+
+        <action
+            android:id="@+id/action_StartFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+        <action
+            android:id="@+id/action_StartFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.example.sns_app.view.MainView"
+        android:label="mainFragment"
+        tools:layout="@layout/fragment_main" >
+
+        <action
+            android:id="@+id/action_MainFragment_to_SignInFragment"
+            app:destination="@id/SignInFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignInFragment"
+        android:name="com.example.sns_app.view.SignInView"
+        android:label="signinFragment"
+        tools:layout="@layout/fragment_signin" >
+
+        <action
+            android:id="@+id/action_SignInFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+        <action
+            android:id="@+id/action_SignInFragment_to_SignUpFragment"
+            app:destination="@id/SignUpFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SignUpFragment"
+        android:name="com.example.sns_app.view.SignUpView"
+        android:label="signupFragment"
+        tools:layout="@layout/fragment_signup" >
+
+        <action
+            android:id="@+id/action_SignUpFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.sns_app.viewmodel.UserViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#b8d2" >
+
+        <View
+            android:id="@+id/user_icon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/style_user_icon"/>
+
+        <TextView
+            android:id="@+id/user_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_icon"
+            android:text="プロフィール写真を変更"
+            android:textColor="#2b2b2b"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/user_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_txt1"
+            android:text="ユーザー名"
+            android:textColor="#2b2b2b"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/user_txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_txt2"
+            android:text="メールアドレス"
+            android:textColor="#2b2b2b"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/user_txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_txt3"
+            android:text="パスワード"
+            android:textColor="#2b2b2b"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/user_btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user_txt4"
+            android:text="ログアウト"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:background="@drawable/style_login_button"
+            android:onClick="@{() -> viewModel.logoutButtonTapped()}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
