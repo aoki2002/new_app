@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -14,6 +15,7 @@ import com.example.sns_app.R
 import com.example.sns_app.databinding.FragmentSigninBinding
 import com.example.sns_app.viewmodel.SignInViewModel
 import androidx.lifecycle.Observer
+import com.example.sns_app.MainActivity
 
 class SignInView: Fragment() {
 
@@ -36,17 +38,19 @@ class SignInView: Fragment() {
 
         val navController = view.findNavController()
 
-        val signinObserver = Observer<Boolean> { signin ->
-            if (signin) {
+        val loginObserver = Observer<Boolean> { login ->
+            if (login) {
 
-                navController.navigate(R.id.action_SignInFragment_to_MainFragment)
+                val intent = Intent(activity, MainActivity::class.java)
+
+                startActivity(intent)
             } else {
 
                 Toast.makeText(activity, "ログイン失敗", Toast.LENGTH_LONG).show()
             }
         }
 
-        signinViewModel.loginIsEnable.observe(this, signinObserver)
+        signinViewModel.loginIsEnable.observe(this, loginObserver)
 
         binding.loginBtn2.setOnClickListener {
 

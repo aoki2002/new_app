@@ -1,5 +1,6 @@
 package com.example.sns_app.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.example.sns_app.MainActivity
 import com.example.sns_app.databinding.FragmentStartBinding
 import com.example.sns_app.viewmodel.StartViewModel
 import com.example.sns_app.R
@@ -49,7 +51,9 @@ class StartView: Fragment() {
                 {
                     if ( startViewModel.checkIsEnable == true) {
 
-                        navController.navigate(R.id.action_StartFragment_to_MainFragment)
+                        val intent = Intent(activity, MainActivity::class.java)
+
+                        startActivity(intent)
                     } else {
 
                         navController.navigate(R.id.action_StartFragment_to_SignInFragment)

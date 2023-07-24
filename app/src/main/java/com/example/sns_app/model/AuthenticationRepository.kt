@@ -13,6 +13,7 @@ class AuthenticationRepository {
     private lateinit var auth: FirebaseAuth
     private var loginResult: Boolean? = null
     private var createResult: Boolean? = null
+    private var logoutResult: Boolean? = null
 
     fun checkAccount(): Boolean? {
 
@@ -55,13 +56,17 @@ class AuthenticationRepository {
         return createResult
     }
 
-    fun logoutAccount() {
+    fun logoutAccount(): Boolean? {
 
         Log.d("Authentication", "ログアウト")
 
         auth = Firebase.auth
 
         auth.signOut()
+
+        logoutResult = true
+
+        return logoutResult
     }
 
     fun updateProfile(name: String) {

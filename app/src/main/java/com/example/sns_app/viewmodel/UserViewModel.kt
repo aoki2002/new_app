@@ -6,11 +6,19 @@ import com.example.sns_app.model.AuthenticationRepository
 
 class UserViewModel: ViewModel() {
 
+    var logoutIsEnable = MutableLiveData<Boolean>()
+
     private val authenticationRepository = AuthenticationRepository()
 
     fun logoutButtonTapped() {
 
-        authenticationRepository.logoutAccount()
+        if( authenticationRepository.logoutAccount() == true) {
+
+            logoutIsEnable.value = true
+        } else {
+
+            logoutIsEnable.value = false
+        }
     }
 
 }
